@@ -681,4 +681,13 @@ modal popup 개별
     height: 22rem !important;
   }
 }
-    
+
+#clone .contents .grid-container{
+  grid-template-columns:minmax(0,800px) !important;
+  grid-template-areas:'item1' !important;
+  justify-content:center !important;
+}
+
+#clone .contents .grid-container .grid-item.item1{
+  grid-area:item1 !important;
+}
