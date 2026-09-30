@@ -1,0 +1,32 @@
+INOY 새 포트폴리오 템플릿 적용 메모
+
+이 폴더는 기존 INOY GitHub 저장소 루트에 합치는 기준으로 제작했습니다.
+기존 assets/, aden-site/, pre-busan-site/ 폴더는 삭제하지 마세요.
+
+새로 교체/추가:
+- index.html
+- styles/
+- script/
+- fullpage/
+- images/
+
+기존에서 그대로 필요:
+- assets/img/이노.jpg
+- assets/img/portfolio/... (디자인 썸네일/상세 이미지)
+- assets/img/portfolio/video/... (영상 포스터)
+- assets/video/projects/06-aden-animation.mp4
+- assets/video/projects/05-pre-busan.mp4
+- assets/video/projects/03-academy-promo.mp4
+- assets/video/projects/04-aden-boulangerie.mp4
+- aden-site/
+- pre-busan-site/
+
+구성:
+1 INTRO
+2 ABOUT
+3 ADEN ANIMATION
+4 PRE:BUSAN
+5 ACADEMY PROMOTION
+6 ADEN BOULANGERIE BRAND VIDEO
+7 WEB DESIGN (ADEN / PRE:BUSAN)
+8 GRAPHIC DESIGN (Culture Mate / VELDEN / DENNY / LUNA / NOMAD TUMBLER / WATER FESTIVAL)
