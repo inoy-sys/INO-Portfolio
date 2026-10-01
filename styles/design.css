@@ -1033,3 +1033,265 @@ modal popup 개별
     grid-template-columns:1fr !important;
   }
 }
+
+
+/* =========================================================
+   GRAPHIC PROJECT — FULLSCREEN DETAIL VIEWER
+   Keeps all six project detail contents intact.
+   ========================================================= */
+
+/* The overlay itself becomes the page */
+#graphic .old-inoy-detail-modal{
+  position:fixed !important;
+  inset:0 !important;
+  width:100vw !important;
+  height:100vh !important;
+  background:#fff !important;
+  overflow:hidden !important;
+  z-index:9999 !important;
+}
+
+/* Remove the old centered popup-box feeling */
+#graphic .old-inoy-detail-modal .container{
+  position:absolute !important;
+  inset:0 !important;
+  top:0 !important;
+  left:0 !important;
+  transform:none !important;
+  width:100vw !important;
+  max-width:none !important;
+  height:100vh !important;
+  margin:0 !important;
+  padding:0 !important;
+  gap:0 !important;
+  display:block !important;
+  background:#fff !important;
+}
+
+/* Floating back button instead of modal title bar */
+#graphic .old-inoy-detail-modal .title_btn_container{
+  position:fixed !important;
+  top:22px !important;
+  left:24px !important;
+  z-index:10020 !important;
+  width:auto !important;
+  height:auto !important;
+  min-height:0 !important;
+  padding:0 !important;
+  margin:0 !important;
+  display:block !important;
+  pointer-events:none !important;
+  background:transparent !important;
+  border:0 !important;
+}
+
+#graphic .old-inoy-detail-modal .title_btn_container .title{
+  display:none !important;
+}
+
+#graphic .old-inoy-detail-modal .title_btn_container .close_btn{
+  pointer-events:auto !important;
+  position:relative !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:auto !important;
+  height:42px !important;
+  padding:0 17px !important;
+  border-radius:999px !important;
+  background:rgba(15,18,24,.82) !important;
+  border:1px solid rgba(255,255,255,.18) !important;
+  box-shadow:0 8px 24px rgba(0,0,0,.16) !important;
+  backdrop-filter:blur(12px) !important;
+  -webkit-backdrop-filter:blur(12px) !important;
+  text-decoration:none !important;
+  transform:none !important;
+}
+
+#graphic .old-inoy-detail-modal .title_btn_container .close_btn::before{
+  content:"←  BACK TO GRAPHIC" !important;
+  color:#fff !important;
+  font-family:'Montserrat',Arial,sans-serif !important;
+  font-size:11px !important;
+  font-weight:700 !important;
+  letter-spacing:.10em !important;
+  white-space:nowrap !important;
+}
+
+#graphic .old-inoy-detail-modal .title_btn_container .close_btn img{
+  display:none !important;
+}
+
+#graphic .old-inoy-detail-modal .title_btn_container .close_btn:hover{
+  transform:translateY(-2px) !important;
+  background:rgba(15,18,24,.94) !important;
+}
+
+/* One natural full-screen scroll, no inner framed viewport */
+#graphic .old-inoy-detail-modal .old-inoy-detail-scroll{
+  position:absolute !important;
+  inset:0 !important;
+  width:100vw !important;
+  height:100vh !important;
+  min-height:100vh !important;
+  max-height:none !important;
+  overflow-y:auto !important;
+  overflow-x:hidden !important;
+  background:#fff !important;
+  text-align:left !important;
+  scroll-behavior:smooth !important;
+  overscroll-behavior:contain !important;
+  -webkit-overflow-scrolling:touch !important;
+  scrollbar-width:thin !important;
+}
+
+/* Let the project artwork use the browser width */
+#graphic .old-inoy-detail-modal .old-project-detail{
+  width:100% !important;
+  max-width:none !important;
+  min-height:100vh !important;
+  margin:0 !important;
+  padding:0 !important;
+  transform:none !important;
+}
+
+/* Remove the old sticky mini topbar; the floating BACK button replaces it */
+#graphic .old-inoy-detail-modal .old-detail-topbar{
+  display:none !important;
+}
+
+/* Cleaner scrollbar */
+#graphic .old-inoy-detail-modal .old-inoy-detail-scroll::-webkit-scrollbar{
+  width:8px !important;
+}
+#graphic .old-inoy-detail-modal .old-inoy-detail-scroll::-webkit-scrollbar-track{
+  background:transparent !important;
+}
+#graphic .old-inoy-detail-modal .old-inoy-detail-scroll::-webkit-scrollbar-thumb{
+  background:rgba(80,80,80,.35) !important;
+  border:2px solid transparent !important;
+  background-clip:padding-box !important;
+  border-radius:999px !important;
+}
+
+/* Keep the two semantic project headers visible despite the site's global header rule */
+#graphic .old-inoy-detail-modal header.le-hero,
+#graphic .old-inoy-detail-modal header.wf-hero{
+  position:relative !important;
+  top:auto !important;
+  left:auto !important;
+  width:100% !important;
+  height:auto !important;
+  opacity:1 !important;
+  transform:none !important;
+  animation:none !important;
+  border-bottom:0 !important;
+}
+#graphic .old-inoy-detail-modal header.le-hero{
+  display:block !important;
+  min-height:780px !important;
+}
+#graphic .old-inoy-detail-modal header.wf-hero{
+  display:grid !important;
+  grid-template-columns:.85fr 1.15fr !important;
+  min-height:720px !important;
+  align-items:center !important;
+}
+
+@media(max-width:850px){
+  #graphic .old-inoy-detail-modal .title_btn_container{
+    top:14px !important;
+    left:14px !important;
+  }
+  #graphic .old-inoy-detail-modal .title_btn_container .close_btn{
+    height:38px !important;
+    padding:0 13px !important;
+  }
+  #graphic .old-inoy-detail-modal header.wf-hero{
+    grid-template-columns:1fr !important;
+  }
+}
+
+
+/* ===== FULLSCREEN DETAIL REFINEMENT : breathing room + visible cursor ===== */
+
+/* Keep the full-screen experience, but give the artwork a comfortable frame */
+#graphic .old-inoy-detail-modal{
+  background:#111820 !important;
+  padding:0 !important;
+}
+
+#graphic .old-inoy-detail-modal .container{
+  background:#111820 !important;
+  padding:18px clamp(18px,3.2vw,56px) 24px !important;
+  box-sizing:border-box !important;
+}
+
+/* Content is no longer edge-to-edge */
+#graphic .old-inoy-detail-modal .old-inoy-detail-scroll{
+  position:relative !important;
+  inset:auto !important;
+  width:100% !important;
+  height:100% !important;
+  min-height:0 !important;
+  max-width:1440px !important;
+  margin:0 auto !important;
+  border-radius:14px !important;
+  overflow-y:auto !important;
+  overflow-x:hidden !important;
+  box-shadow:0 18px 60px rgba(0,0,0,.24) !important;
+}
+
+/* Leave a little top breathing room for the floating back button */
+#graphic .old-inoy-detail-modal .title_btn_container{
+  top:28px !important;
+  left:clamp(30px,4.2vw,72px) !important;
+}
+
+/* Cursor: force a bright, readable pointer while a graphic detail is open */
+body:has(#graphic .old-inoy-detail-modal[style*="display: block"]) #cursor,
+body:has(#graphic .old-inoy-detail-modal[style*="display:block"]) #cursor{
+  opacity:1 !important;
+  width:22px !important;
+  height:22px !important;
+  background:#fff !important;
+  border:2px solid rgba(0,0,0,.65) !important;
+  box-shadow:0 0 0 3px rgba(255,255,255,.35),0 3px 12px rgba(0,0,0,.35) !important;
+  mix-blend-mode:normal !important;
+  z-index:20000 !important;
+}
+
+/* Existing JS adds .active while a modal is open; keep it readable too */
+#cursor.active{
+  opacity:1 !important;
+}
+#graphic ~ #cursor.active,
+body #cursor.active{
+  z-index:20000 !important;
+}
+
+/* Keep artwork itself full-width inside the framed reading column */
+#graphic .old-inoy-detail-modal .old-project-detail{
+  width:100% !important;
+  max-width:none !important;
+}
+
+/* desktop: don't let very large displays make the work feel oversized */
+@media(min-width:1500px){
+  #graphic .old-inoy-detail-modal .old-inoy-detail-scroll{
+    max-width:1380px !important;
+  }
+}
+
+@media(max-width:850px){
+  #graphic .old-inoy-detail-modal .container{
+    padding:10px 10px 14px !important;
+  }
+  #graphic .old-inoy-detail-modal .old-inoy-detail-scroll{
+    border-radius:10px !important;
+  }
+  #graphic .old-inoy-detail-modal .title_btn_container{
+    top:18px !important;
+    left:18px !important;
+  }
+}
