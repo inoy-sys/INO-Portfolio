@@ -641,3 +641,36 @@ modal popup 개별
 #intro .scrolldown {
     z-index: 3 !important;
 }
+
+/* ===== WEB DESIGN 2 CARDS FIX ===== */
+
+#clone .contents .grid-container {
+    display: grid !important;
+    width: 70vw !important;
+    max-width: 1000px !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: 280px !important;
+    grid-template-areas: "item1 item2" !important;
+    gap: 24px !important;
+    justify-content: center !important;
+}
+
+/* 개인 ADEN */
+#clone .contents .grid-container .grid-item.item1 {
+    grid-area: item1 !important;
+    background-image: url('../aden-site/assets/aden-personal-main.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    height: 280px !important;
+    margin-top: 0 !important;
+}
+
+/* TEAM ADEN */
+#clone .contents .grid-container .grid-item.item2 {
+    grid-area: item2 !important;
+    background-image: url('../team-aden/assets/hero.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    height: 280px !important;
+    margin-top: 0 !important;
+}
