@@ -910,4 +910,4 @@ modal popup 개별
 #graphic .old-inoy-detail-modal .title_btn_container{flex:0 0 42px!important;min-height:42px!important}
 #graphic .old-inoy-detail-modal .old-inoy-detail-scroll{flex:1 1 0!important;min-height:0!important;height:0!important;overflow-y:auto!important;overflow-x:hidden!important;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
 #graphic .old-inoy-detail-modal .old-project-detail{width:100%!important;max-width:none!important;margin:0!important;transform:none!important}
-#graphic .old-inoy-detail-modal .water-case,#graphic .old-inoy-detail-modal .luna-editorial{height:auto!important;max-height:none!important;overflow:visible!important}
+#graphic .old-inoy-detail-modal .luna-editorial{height:auto!important;max-height:none!important;overflow:visible!important}
