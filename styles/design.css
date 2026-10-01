@@ -773,3 +773,26 @@ modal popup 개별
     height: 280px !important;
     margin-top: 0 !important;
 }
+/* 카드 작업 분야 */
+#graphic .contents .grid-container .grid-item::before {
+    content: attr(data-category);
+    position: absolute;
+    left: 16px;
+    bottom: 40px;
+    z-index: 2;
+
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: .07em;
+
+    background: rgba(20, 35, 45, 0.58);
+    padding: 5px 8px;
+    border-radius: 4px;
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    text-shadow: none;
+    pointer-events: none;
+}
