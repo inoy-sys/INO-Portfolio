@@ -668,7 +668,7 @@ modal popup 개별
 /* TEAM ADEN */
 #clone .contents .grid-container .grid-item.item2 {
     grid-area: item2 !important;
-    background-image: url('../team-aden/assets/hero.jpg') !important;
+    background-image: url('../aden-site/assets/아덴\ 베이커리\ 브랜드\ 팀\ 웹사이트.png') !important;
     background-size: cover !important;
     background-position: center !important;
     height: 280px !important;
