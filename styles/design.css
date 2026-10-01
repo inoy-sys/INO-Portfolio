@@ -397,7 +397,26 @@ web 개별
 /* 
 clone, graphic section 공통
 */
-.clone_graphic_section {background: #111;}
+.clone_graphic_section {
+    background:
+        radial-gradient(
+            circle at 25% 30%,
+            rgba(255, 255, 255, 0.75) 0%,
+            rgba(210, 230, 242, 0.45) 28%,
+            transparent 55%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(170, 205, 225, 0.55) 0%,
+            transparent 50%
+        ),
+        linear-gradient(
+            135deg,
+            #dceaf3 0%,
+            #b8d1e1 45%,
+            #8faec2 100%
+        );
+}
 .clone_graphic_section .contents {
     display:flex; flex-flow:row nowrap; align-items: center;
     justify-content: center; gap:60px;
