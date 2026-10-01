@@ -424,7 +424,7 @@ clone, graphic section 공통
 }
 .clone_graphic_section .contents h1 {
     font-family: 'Montserrat'; font-weight: 700; font-size: 2.5rem; color: #FFFFFF;
-    font-weight: 700; font-size: 2.5rem; color: #FFFFFF;
+    font-weight: 700; font-size: 2.5rem; color: #24475d;
     width: min-content; white-space: nowrap;
 }
 .clone_graphic_section .contents .grid-container {display:grid; gap:24px;}
