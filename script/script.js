@@ -74,3 +74,24 @@ function closeModal(modal){
 }
 modal_close.forEach((target,index)=>target.addEventListener('click',function(e){e.preventDefault(); if(modal_popup_bg[index]) closeModal(modal_popup_bg[index]);}));
 modal_popup_bg.forEach(target=>target.addEventListener('click',function(e){if(this===e.target) closeModal(this);}));
+
+
+// WATER FESTIVAL modal: keep wheel/touch scrolling inside its detail page.
+(function(){
+  const waterCase = document.querySelector('#graphic .water-case');
+  if(!waterCase) return;
+  const scroller = waterCase.closest('.old-inoy-detail-scroll');
+  if(!scroller) return;
+
+  scroller.addEventListener('wheel', function(e){
+    e.stopPropagation();
+    const max = this.scrollHeight - this.clientHeight;
+    if(max <= 0) return;
+    this.scrollTop += e.deltaY;
+    e.preventDefault();
+  }, { passive:false });
+
+  scroller.addEventListener('touchmove', function(e){
+    e.stopPropagation();
+  }, { passive:true });
+})();

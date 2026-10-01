@@ -911,3 +911,86 @@ modal popup 개별
 #graphic .old-inoy-detail-modal .old-inoy-detail-scroll{flex:1 1 0!important;min-height:0!important;height:0!important;overflow-y:auto!important;overflow-x:hidden!important;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
 #graphic .old-inoy-detail-modal .old-project-detail{width:100%!important;max-width:none!important;margin:0!important;transform:none!important}
 #graphic .old-inoy-detail-modal .luna-editorial{height:auto!important;max-height:none!important;overflow:visible!important}
+
+
+/* ===== WATER FESTIVAL ONLY : detail scroll fix ===== */
+#graphic .old-inoy-detail-modal .water-case{
+  height:auto !important;
+  min-height:100% !important;
+  max-height:none !important;
+  overflow:visible !important;
+}
+#graphic .old-inoy-detail-modal .water-case .wf-hero,
+#graphic .old-inoy-detail-modal .water-case .wf-system,
+#graphic .old-inoy-detail-modal .water-case .wf-application{
+  position:relative !important;
+  height:auto !important;
+  max-height:none !important;
+  overflow:visible !important;
+}
+
+
+/* ===== LUNA + WATER HERO IMAGE VISIBILITY FIX ONLY ===== */
+
+/* LUNA first hero */
+#graphic .old-inoy-detail-modal .luna-editorial .le-hero,
+#graphic .old-inoy-detail-modal .luna-editorial .le-hero-layout,
+#graphic .old-inoy-detail-modal .luna-editorial .le-hero-stage{
+  overflow:visible !important;
+}
+#graphic .old-inoy-detail-modal .luna-editorial .le-hero-stage{
+  position:relative !important;
+  min-height:620px !important;
+  height:620px !important;
+  z-index:1 !important;
+}
+#graphic .old-inoy-detail-modal .luna-editorial .le-hero-stage img{
+  display:block !important;
+  position:relative !important;
+  z-index:5 !important;
+  width:auto !important;
+  max-width:95% !important;
+  height:92% !important;
+  max-height:570px !important;
+  object-fit:contain !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  margin:auto !important;
+}
+
+/* WATER first hero */
+#graphic .old-inoy-detail-modal .water-case .wf-hero,
+#graphic .old-inoy-detail-modal .water-case .wf-hero-art{
+  overflow:visible !important;
+}
+#graphic .old-inoy-detail-modal .water-case .wf-hero-art{
+  position:relative !important;
+  z-index:1 !important;
+  min-height:620px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+}
+#graphic .old-inoy-detail-modal .water-case .wf-hero-art img{
+  display:block !important;
+  position:relative !important;
+  z-index:5 !important;
+  width:auto !important;
+  max-width:100% !important;
+  height:auto !important;
+  max-height:650px !important;
+  object-fit:contain !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  margin:auto !important;
+}
+
+@media (max-width:900px){
+  #graphic .old-inoy-detail-modal .luna-editorial .le-hero-stage{
+    min-height:500px !important;
+    height:500px !important;
+  }
+  #graphic .old-inoy-detail-modal .water-case .wf-hero-art{
+    min-height:520px !important;
+  }
+}
