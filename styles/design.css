@@ -1295,3 +1295,39 @@ body #cursor.active{
     left:18px !important;
   }
 }
+
+
+/* ===== WATER FESTIVAL : fullscreen scroll repair =====
+   Use exactly one scroll container. Prevent nested/competing scroll areas. */
+#graphic .old-inoy-detail-modal .old-inoy-detail-scroll:has(.water-case){
+  overflow-y:auto !important;
+  overflow-x:hidden !important;
+  overscroll-behavior:auto !important;
+  touch-action:pan-y !important;
+  scroll-behavior:auto !important;
+}
+
+#graphic .old-inoy-detail-modal .water-case{
+  position:relative !important;
+  width:100% !important;
+  height:auto !important;
+  min-height:0 !important;
+  max-height:none !important;
+  overflow:visible !important;
+  touch-action:auto !important;
+}
+
+#graphic .old-inoy-detail-modal .water-case .wf-hero,
+#graphic .old-inoy-detail-modal .water-case .wf-system,
+#graphic .old-inoy-detail-modal .water-case .wf-application{
+  position:relative !important;
+  height:auto !important;
+  max-height:none !important;
+  overflow:visible !important;
+}
+
+/* Do not create another scroll surface inside WATER */
+#graphic .old-inoy-detail-modal .water-case *,
+#graphic .old-inoy-detail-modal .water-case figure{
+  overscroll-behavior:auto !important;
+}
