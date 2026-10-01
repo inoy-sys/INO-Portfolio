@@ -615,7 +615,10 @@ modal popup 개별
 /* DENNY */
 #graphic .contents .grid-container .item3 {
     grid-area: item3 !important;
-    background-image: url('../assets/portfolio/denny/denny-preview-main.png') !important;
+    background-image: url('../assets/portfolio/denny/denysome.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
 }
 
 /* LUNA */
@@ -633,7 +636,11 @@ modal popup 개별
 /* WATER FESTIVAL */
 #graphic .contents .grid-container .item6 {
     grid-area: item6 !important;
+    background-color: #080d27 !important;
     background-image: url('../assets/portfolio/poster/포스터.png') !important;
+    background-size: contain !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
 }
 
 
