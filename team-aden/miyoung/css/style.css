@@ -1,0 +1,1251 @@
+/* =========================================================
+   01. Design Tokens / Reset
+   ========================================================= */
+:root {
+  --navy: #052e65;
+  --cream: #faf7f0;
+  --header: #e1e3e2;
+  --sky: #e5ecf7;
+  --white: #ffffff;
+  --text: #262626;
+  --muted: #666666;
+  --line: rgba(5, 46, 101, 0.20);
+
+  --container: 1180px;
+  --page-pad: 40px;
+
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: Arial, "Noto Sans KR", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--cream);
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.55;
+}
+
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+figure,
+p,
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
+
+.site-container {
+  width: min(calc(100% - (var(--page-pad) * 2)), var(--container));
+  margin-inline: auto;
+}
+
+.section {
+  padding: 82px 0;
+}
+
+/* =========================================================
+   02. Typography
+   ========================================================= */
+h1,
+h2 {
+  margin-bottom: 0;
+  color: var(--navy);
+  font-family: var(--serif);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+h1 {
+  font-size: clamp(54px, 5.2vw, 78px);
+  line-height: 0.98;
+}
+
+h2 {
+  font-size: clamp(34px, 3.1vw, 48px);
+  line-height: 1;
+}
+
+h3 {
+  margin-bottom: 0;
+  color: var(--navy);
+}
+
+.eyebrow,
+.section-heading p {
+  margin: 8px 0 0;
+  color: var(--navy);
+  font-size: 18px;
+}
+
+.section-heading {
+  margin-bottom: 30px;
+}
+
+.heading-rule {
+  width: 100%;
+  max-width: 370px;
+  height: 1px;
+  margin: 22px 0 28px;
+  background: var(--line);
+  font-size: 18px;
+}
+
+.intro-body {
+  margin-bottom: 14px;
+  color: #4b4b4b;
+  font-size: 16px;
+}
+
+.intro-body2 {
+  margin-bottom: 14px;
+  color: #4b4b4b;
+  font-size: 16px;
+}
+
+/* =========================================================
+   03. Header / Navigation
+   ========================================================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(225, 227, 226, 0.97);
+  border-bottom: 1px solid rgba(5, 46, 101, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.header-inner {
+  min-height: 74px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.brand-logo {
+  width: 74px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.main-nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.main-nav a {
+  position: relative;
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  right: 100%;
+  bottom: -7px;
+  left: 0;
+  height: 1px;
+  background: currentColor;
+  transition: right 0.2s ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+  right: 0;
+}
+
+.menu-toggle {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-content: center;
+  gap: 3px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--navy);
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 12px;
+  height: 1px;
+  display: block;
+  background: var(--white);
+}
+
+/* =========================================================
+   04. Shared Buttons
+   ========================================================= */
+.pill-button {
+  min-width: 150px;
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 22px;
+  padding: 10px 24px;
+  border-radius: 999px;
+  background: var(--navy);
+  color: var(--white);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.pill-button--cream {
+  background: #ffe9a8;
+  color: var(--navy);
+}
+
+.section-action {
+  margin-top: 34px;
+  text-align: center;
+}
+
+/* =========================================================
+   05. HOME - Hero
+   ========================================================= */
+.home-hero {
+  background: var(--sky);
+}
+
+.home-hero-inner {
+  position: relative;
+  width: 100vw;
+  aspect-ratio: 1880 / 930;
+  overflow: hidden;
+}
+
+.home-hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.home-hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.home-hero-copy {
+  width: 42%;
+  color: var(--navy);
+}
+
+.home-hero-copy h1 {
+  font-family: var(--sans);
+  font-size: clamp(54px, 5.4vw, 82px);
+  font-weight: 800;
+  line-height: 1.03;
+  letter-spacing: -0.055em;
+}
+
+.home-hero-copy p {
+  margin: 28px 0 0;
+  font-size: 15px;
+}
+
+/* =========================================================
+   06. HOME - Signature Menu
+   ========================================================= */
+.home-signature {
+  padding-top: 84px;
+  padding-bottom: 72px;
+}
+
+.signature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.signature-card img {
+  aspect-ratio: 1 / 1.08;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.signature-card h3 {
+  margin: 11px 0 0;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   07. HOME - Our Space
+   ========================================================= */
+.home-space {
+  padding-top: 28px;
+  padding-bottom: 72px;
+}
+
+.space-feature {
+  position: relative;
+  min-height: 310px;
+  overflow: hidden;
+  background: var(--navy);
+}
+
+.space-feature-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.space-feature-copy {
+  position: relative;
+  z-index: 2;
+  width: 45%;
+  margin-left: auto;
+  padding: 56px 68px;
+  color: var(--white);
+}
+
+.space-feature-copy h2,
+.space-feature-copy .eyebrow {
+  color: var(--white);
+}
+
+.space-feature-copy p {
+  margin-top: 22px;
+  font-size: 13px;
+}
+
+/* =========================================================
+   08. HOME - Promotion
+   ========================================================= */
+.home-promotion {
+  padding-top: 78px;
+  padding-bottom: 84px;
+}
+
+.promotion-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.promotion-preview {
+  display: block;
+  overflow: hidden;
+  background: var(--white);
+}
+
+.promotion-preview img {
+  aspect-ratio: 4 / 6;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.promotion-preview:hover img {
+  transform: scale(1.02);
+}
+
+/* =========================================================
+   09. Shared Page Intro
+   ========================================================= */
+.page-intro {
+  padding-top: 88px;
+  padding-bottom: 74px;
+}
+
+.two-column-intro {
+  display: grid;
+  grid-template-columns: 42% 58%;
+  gap: 58px;
+  align-items: start;
+}
+
+.intro-copy {
+  padding-top: 8px;
+}
+
+.intro-visual {
+  margin: 0;
+  overflow: hidden;
+}
+
+.about-intro-visual img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.promotion-intro-visual img {
+  aspect-ratio: 547 / 343;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.visit-intro-visual img {
+  aspect-ratio: 547 / 452;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* =========================================================
+   10. ABOUT - Story
+   ========================================================= */
+.about-story-section {
+  padding-top: 46px;
+  padding-bottom: 78px;
+}
+
+.story-layout {
+  display: grid;
+  grid-template-columns: 48% 52%;
+  gap: 58px;
+  align-items: center;
+}
+
+.story-image {
+  margin: 0;
+}
+
+.story-image img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.story-copy p:not(.eyebrow) {
+  margin-bottom: 10px;
+  color: #4d4d4d;
+  font-size: 14px;
+}
+
+/* =========================================================
+   11. ABOUT - Values
+   ========================================================= */
+.about-values {
+  padding-top: 70px;
+  padding-bottom: 74px;
+}
+
+.value-grid {
+  max-width: 930px;
+  margin: 34px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 64px;
+}
+
+.value-card {
+  text-align: center;
+}
+
+.value-card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* .value-card img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+} */
+
+.value-card h3 {
+  margin: 14px 0 4px;
+  font-size: 13px;
+}
+
+.value-card p {
+  margin: 0;
+  color: #5f5f5f;
+  font-size: 11px;
+}
+
+/* =========================================================
+   12. ABOUT - Logo & Character
+   ========================================================= */
+
+.about-character-section {
+  padding-top: 52px;
+  padding-bottom: 60px;
+}
+
+.logo-character-layout {
+  margin-top: 28px;
+
+  display: grid;
+  grid-template-columns: 4fr 8fr; /* 로고 4 : 캐릭터 8 */
+  gap: 40px;
+  align-items: center;
+}
+
+/* 왼쪽 로고 영역 */
+.logo-character-brand {
+  width: 100%;
+  min-height: 170px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 오른쪽 캐릭터 영역 */
+.logo-character-visual {
+  width: 100%;
+  min-height: 170px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 로고 이미지 */
+.about-logo-large {
+  display: block;
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+
+  object-fit: contain;
+}
+
+/* 캐릭터 이미지 */
+.logo-character-visual img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+
+  object-fit: contain;
+}
+
+
+   /* .about-character-section {
+  padding-top: 52px;
+  padding-bottom: 60px;
+}
+
+.logo-character-layout {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 54px;
+  align-items: center;
+}
+
+.logo-character-brand,
+.logo-character-visual {
+  min-height: 170px;
+  display: flex;
+  align-items: center;
+}
+
+.about-logo-large {
+  max-width: 250px;
+  max-height: 150px;
+  object-fit: contain;
+}
+
+.logo-character-visual img {
+  max-height: 175px;
+  object-fit: contain;
+} */
+
+
+
+/* =========================================================
+   13. ABOUT - Brand Identity
+   ========================================================= */
+.brand-identity-section {
+  padding-top: 54px;
+  padding-bottom: 86px;
+}
+
+.identity-grid {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.identity-card {
+  margin: 0;
+  overflow: hidden;
+  background: var(--white);
+}
+
+.identity-card img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* =========================================================
+   14. MENU - Hero
+   ========================================================= */
+.menu-hero {
+  position: relative;
+  overflow: hidden;
+  background: #bfdaf0;
+}
+
+.menu-hero > img {
+  width: 100%;
+  height: 355px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.menu-hero-copy {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.menu-hero-copy h1 {
+  font-size: 64px;
+}
+
+.menu-hero-copy p {
+  margin: 10px 0 0;
+  color: var(--navy);
+  font-size: 13px;
+}
+
+/* =========================================================
+   15. MENU - Category / Cards
+   ========================================================= */
+.menu-category {
+  padding-top: 62px;
+  padding-bottom: 32px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.menu-card img {
+  aspect-ratio: 1.19 / 1;
+  object-fit: cover;
+}
+
+.menu-card-copy {
+  padding-top: 8px;
+}
+
+.menu-card h3 {
+  margin: 0 0 2px;
+  font-size: 12px;
+}
+
+.menu-card p {
+  margin: 0;
+  color: #747474;
+  font-size: 10px;
+}
+
+.menu-card strong {
+  display: block;
+  margin-top: 4px;
+  color: #555555;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* =========================================================
+   16. PROMOTION - Event
+   ========================================================= */
+.event-section {
+  padding-top: 64px;
+  padding-bottom: 66px;
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.event-card {
+  margin: 0;
+  overflow: hidden;
+}
+
+.event-card img {
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+/* =========================================================
+   17. PROMOTION - Card News
+   ========================================================= */
+.cardnews-section {
+  padding-top: 58px;
+  padding-bottom: 86px;
+}
+
+.cardnews-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.cardnews-card {
+  margin: 0;
+  overflow: hidden;
+}
+
+.cardnews-card img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+/* =========================================================
+   18. VISIT - Location
+   ========================================================= */
+
+  .location-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  align-items: stretch;
+}
+
+.map-visual {
+  width: 100%;
+  min-height: 360px;
+  overflow: hidden;
+}
+
+.map-visual iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  border: 0;
+}
+
+.location-card-visual {
+  margin: 0;
+  width: 100%;
+}
+
+.location-card-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* .visit-location {
+  padding-top: 54px;
+  padding-bottom: 58px;
+}
+
+.location-layout {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: 2fr 1.08fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.map-visual,
+.location-card-visual {
+  margin: 0;
+}
+
+.location-layout img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+} */
+
+/* =========================================================
+   19. VISIT - Guide / Banner
+   ========================================================= */
+/* .visit-guide-section {
+  padding-top: 52px;
+  padding-bottom: 42px;
+}
+
+.visit-guide-visual {
+  margin-top: 26px;
+}
+
+.visit-guide-visual img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.visit-banner-section {
+  padding: 10px 0 58px;
+}
+
+.visit-banner {
+  width: 100%;
+  height: auto;
+  object-fit: contain; */
+}
+
+
+.visit-guide {
+  background-color: #FAF7F0;
+  padding: 60px 0;
+}
+
+.visit-guide-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  align-items: start;
+}
+
+.visit-guide-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* =========================================================
+   20. Footer
+   ========================================================= */
+.site-footer {
+  margin-top: 20px;
+  background: var(--navy);
+  color: var(--white);
+}
+
+.footer-inner {
+  min-height: 126px;
+  display: grid;
+  grid-template-columns: 82px 1fr auto;
+  gap: 28px;
+  align-items: center;
+}
+
+.footer-logo {
+  width: 72px;
+  height: 50px;
+}
+
+.footer-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.footer-message,
+.footer-copy {
+  margin: 0;
+}
+
+.footer-message {
+  font-size: 12px;
+}
+
+.footer-copy {
+  opacity: 0.72;
+  font-size: 9px;
+}
+
+/* =========================================================
+   21. Responsive - 1024px
+   ========================================================= */
+@media (max-width: 1024px) {
+  :root {
+    --page-pad: 24px;
+  }
+
+  .section {
+    padding-top: 66px;
+    padding-bottom: 66px;
+  }
+
+  .home-hero-copy {
+    width: 48%;
+  }
+
+  .signature-grid,
+  .promotion-preview-grid,
+  .menu-grid,
+  .identity-grid,
+  .cardnews-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .space-feature-copy {
+    width: 52%;
+    padding: 48px 44px;
+  }
+
+  .two-column-intro,
+  .story-layout {
+    gap: 36px;
+  }
+
+  .value-grid {
+    gap: 28px;
+  }
+
+  .logo-character-layout {
+    gap: 34px;
+  }
+}
+
+/* =========================================================
+   22. Responsive - 768px
+   ========================================================= */
+@media (max-width: 768px) {
+  :root {
+    --page-pad: 16px;
+  }
+
+  .site-header {
+    position: sticky;
+  }
+
+  .header-inner {
+    min-height: 66px;
+  }
+
+  .main-nav {
+    position: absolute;
+    top: 66px;
+    right: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    margin-left: 0;
+    padding: 8px 0;
+    background: var(--header);
+    border-top: 1px solid rgba(5, 46, 101, 0.10);
+  }
+
+  .main-nav.open {
+    display: flex;
+  }
+
+  .main-nav a {
+    width: 100%;
+    padding: 14px 20px;
+    text-align: center;
+  }
+
+  .main-nav a::after {
+    display: none;
+  }
+
+  .menu-toggle {
+    margin-left: auto;
+  }
+
+  .section {
+    padding-top: 54px;
+    padding-bottom: 54px;
+  }
+
+  h1 {
+    font-size: clamp(44px, 13vw, 62px);
+  }
+
+  h2 {
+    font-size: clamp(30px, 9vw, 42px);
+  }
+
+  /* HOME Hero */
+  .home-hero-inner {
+    aspect-ratio: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .home-hero-image {
+    position: relative;
+    inset: auto;
+    order: 2;
+    aspect-ratio: 1880 / 930;
+    object-fit: cover;
+  }
+
+  .home-hero-content {
+    order: 1;
+    height: auto;
+  }
+
+  .home-hero-copy {
+    width: 100%;
+    padding: 56px 0 34px;
+  }
+
+  .home-hero-copy h1 {
+    font-size: clamp(48px, 14vw, 66px);
+  }
+
+  /* HOME grids */
+  .signature-grid,
+  .promotion-preview-grid,
+  .menu-grid,
+  .event-grid,
+  .cardnews-grid,
+  .identity-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .space-feature {
+    min-height: 360px;
+  }
+
+  .space-feature-image {
+    object-position: left center;
+  }
+
+  .space-feature-copy {
+    width: 64%;
+    padding: 48px 28px;
+  }
+
+  /* Shared intro */
+  .two-column-intro,
+  .story-layout,
+  .logo-character-layout,
+  .location-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-visual {
+    margin-top: 10px;
+  }
+
+  .story-layout {
+    gap: 30px;
+  }
+
+  .value-grid {
+    max-width: 360px;
+    grid-template-columns: 1fr;
+  }
+
+  .about-logo-large {
+    max-width: 210px;
+  }
+
+  .menu-hero > img {
+    height: 260px;
+  }
+
+  .menu-hero-copy h1 {
+    font-size: 50px;
+  }
+
+  .location-layout img {
+    height: auto;
+  }
+
+  .footer-inner {
+    min-height: 0;
+    grid-template-columns: 60px 1fr;
+    gap: 16px;
+    padding: 24px 0;
+  }
+
+  .footer-copy {
+    grid-column: 1 / -1;
+  }
+}
+
+/* =========================================================
+   23. Responsive - Small Mobile
+   ========================================================= */
+@media (max-width: 520px) {
+  .signature-grid,
+  .promotion-preview-grid,
+  .menu-grid,
+  .event-grid,
+  .cardnews-grid,
+  .identity-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .space-feature-copy {
+    width: 78%;
+  }
+}
+
+/* =========================================================
+   VISIT - Store Info + Leaflet Map
+   ========================================================= */
+.store-map-layout {
+  display: grid;
+  grid-template-columns: 34% 66%;
+  align-items: stretch;
+  gap: 24px;
+}
+
+.store-info-card {
+  min-height: 450px;
+  padding: 38px 22px;
+  border-radius: 0 28px 28px 0;
+  background: var(--white);
+  box-shadow: 0 18px 40px rgba(5, 46, 101, 0.08);
+}
+
+.store-info-eyebrow {
+  margin: 0 0 18px;
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .18em;
+}
+
+.store-info-card h3 {
+  margin: 0 0 26px;
+  color: var(--navy);
+  font-family: var(--sans);
+  font-size: clamp(34px, 3.2vw, 48px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -.035em;
+}
+
+.store-info-list {
+  margin: 0;
+}
+
+.store-info-list > div {
+  display: grid;
+  grid-template-columns: 82px 1fr;
+  gap: 10px;
+  margin-bottom: 15px;
+  font-size: 12px;
+}
+
+.store-info-list dt {
+  color: #071d3d;
+  font-weight: 800;
+}
+
+.store-info-list dd {
+  margin: 0;
+  color: #536b87;
+}
+
+.store-info-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.store-info-primary,
+.store-info-secondary {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 22px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.store-info-primary {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.store-info-secondary {
+  border: 1px solid rgba(5, 46, 101, .18);
+  background: var(--white);
+  color: #071d3d;
+}
+
+.store-map-wrap {
+  min-width: 0;
+  min-height: 450px;
+  overflow: hidden;
+  border-radius: 28px;
+  box-shadow: 0 18px 40px rgba(5, 46, 101, 0.10);
+}
+
+.store-leaflet-map {
+  width: 100%;
+  height: 100%;
+  min-height: 450px;
+}
+
+/* 전역 img { width:100% } 때문에 Leaflet 타일이 깨지는 것 방지 */
+.store-leaflet-map .leaflet-tile,
+.store-leaflet-map .leaflet-marker-icon,
+.store-leaflet-map .leaflet-marker-shadow {
+  width: auto;
+  max-width: none !important;
+}
+
+.store-leaflet-map .leaflet-popup-content-wrapper {
+  border-radius: 14px;
+}
+
+@media (max-width: 768px) {
+  .store-map-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .store-info-card {
+    min-height: 0;
+    border-radius: 24px;
+  }
+
+  .store-map-wrap,
+  .store-leaflet-map {
+    min-height: 360px;
+  }
+}

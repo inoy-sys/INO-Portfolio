@@ -1,0 +1,36 @@
+HOME
+- home-hero.png
+- home-menu-01.jpg ~ home-menu-04.jpg
+- home-space.png
+- home-promotion-01.png ~ home-promotion-04.png
+
+ABOUT
+- about-hero.jpg
+- about-story.jpg
+- about-value-01.jpg ~ about-value-03.jpg
+- about-character.png
+- about-identity-color.png
+- about-identity-typography.png
+- about-identity-symbol.png
+- about-identity-tone.png
+
+MENU
+- menu-hero.jpg
+- menu-bakery-01.jpg ~ menu-bakery-04.jpg
+- menu-coffee-01.jpg ~ menu-coffee-04.jpg
+- menu-beverage-01.jpg ~ menu-beverage-04.jpg
+
+PROMOTION
+- promotion-hero.png
+- promotion-event-01.jpg ~ promotion-event-03.jpg
+- promotion-cardnews-01.png ~ promotion-cardnews-04.png
+
+VISIT
+- visit-store-main.png
+- visit-map.png
+- visit-location-card.png
+- visit-guide.jpg
+- visit-banner.png
+
+COMMON
+- logo.png

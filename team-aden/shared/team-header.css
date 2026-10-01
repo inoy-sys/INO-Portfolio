@@ -1,0 +1,99 @@
+/* ADEN Team Final - unified header only */
+#aden-team-header, #aden-team-header *{box-sizing:border-box}
+#aden-team-header{position:sticky;top:0;z-index:9999;width:100%;background:rgba(255,252,246,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(79,56,38,.12);font-family:"Noto Sans KR",Arial,sans-serif;color:#3f2a20}
+#aden-team-header .team-header-inner{width:min(1180px,calc(100% - 40px));height:82px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:28px}
+#aden-team-header .team-logo{display:flex;align-items:center;flex:0 0 auto;text-decoration:none}
+#aden-team-header .team-logo img{display:block;width:auto;height:85px;max-width:240px;object-fit:contain}
+#aden-team-header .team-nav{display:flex;align-items:center;gap:30px;margin-left:auto}
+#aden-team-header .team-nav a{position:relative;display:block;padding:29px 0 26px;color:#4a352a;text-decoration:none;font-size:14px;font-weight:700;letter-spacing:.06em;white-space:nowrap}
+#aden-team-header .team-nav a::after{content:"";position:absolute;left:0;right:100%;bottom:20px;height:2px;background:#8c5f3e;transition:right .22s ease}
+#aden-team-header .team-nav a:hover::after,#aden-team-header .team-nav a.is-current::after{right:0}
+#aden-team-header .team-nav a.is-current{color:#8c5f3e}
+#aden-team-header .team-menu-toggle{display:none;width:42px;height:42px;padding:0;border:0;background:transparent;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px}
+#aden-team-header .team-menu-toggle span{display:block;width:22px;height:2px;background:#4a352a;transition:.2s}
+@media(max-width:820px){
+ #aden-team-header .team-header-inner{height:72px;width:min(100% - 28px,1180px)}
+ #aden-team-header .team-logo img{height:48px}
+ #aden-team-header .team-menu-toggle{display:flex;margin-left:auto}
+ #aden-team-header .team-nav{display:none;position:absolute;left:0;right:0;top:72px;background:#fffaf3;border-bottom:1px solid rgba(79,56,38,.12);padding:14px 24px 22px;flex-direction:column;align-items:stretch;gap:0;box-shadow:0 16px 30px rgba(50,30,20,.08)}
+ #aden-team-header .team-nav.is-open{display:flex}
+ #aden-team-header .team-nav a{padding:13px 4px;font-size:14px}
+ #aden-team-header .team-nav a::after{display:none}
+}
+
+/* =========================
+   공용 SCROLL TO TOP
+========================= */
+
+.team-scroll-top {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 9999;
+
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(8, 47, 97, 0.18);
+  border-radius: 50%;
+
+  background: #ffffff;
+  color: #082f61;
+
+  font-size: 20px;
+  font-weight: 900;
+
+  box-shadow: 0 6px 20px rgba(8, 47, 97, 0.15);
+
+  cursor: pointer;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease,
+    transform 0.25s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.team-scroll-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.team-scroll-top:hover {
+  background: #082f61;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .team-scroll-top {
+    right: 18px;
+    bottom: 18px;
+
+    width: 46px;
+    height: 46px;
+  }
+}
+
+.team-scroll-arrow {
+  position: relative;
+  width: 16px;
+  height: 18px;
+}
+
+.team-scroll-arrow {
+  width: 22px;
+  height: 22px;
+  display: block;
+  flex: 0 0 auto;
+}
+
