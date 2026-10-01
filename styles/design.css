@@ -600,7 +600,15 @@ modal popup 개별
   background-position:center top !important;
   background-repeat:no-repeat !important;
   overflow:hidden;
-
+}
+#clone .contents .grid-container{
+  grid-template-columns:minmax(0,800px) !important;
+  grid-template-areas:'item1' !important;
+  justify-content:center !important;
+}
+#clone .contents .grid-container .grid-item.item1{
+  grid-area:item1 !important;
+}
 
 
 /* ===== INOY HERO VIDEO FIX ===== */
@@ -632,62 +640,4 @@ modal popup 개별
 }
 #intro .scrolldown {
     z-index: 3 !important;
-}
-
-/* WEB DESIGN 반응형 정리 */
-
-/* PC / iPad */
-#clone .contents .grid-container {
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  grid-template-areas: "item1 item2" !important;
-  gap: 24px !important;
-}
-
-#clone .contents .grid-container .grid-item.item1 {
-  grid-area: item1 !important;
-}
-
-#clone .contents .grid-container .grid-item.item2 {
-  grid-area: item2 !important;
-}
-
-/* iPad / Tablet */
-@media (max-width: 900px) {
-  #clone .contents .grid-container {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    grid-template-areas: "item1 item2" !important;
-  }
-
-  #clone .contents .grid-container .grid-item.item1,
-  #clone .contents .grid-container .grid-item.item2 {
-    margin-top: 0 !important;
-    height: 28rem !important;
-  }
-}
-
-/* Mobile */
-@media (max-width: 500px) {
-  #clone .contents .grid-container {
-    grid-template-columns: 1fr !important;
-    grid-template-areas:
-      "item1"
-      "item2" !important;
-  }
-
-  #clone .contents .grid-container .grid-item.item1,
-  #clone .contents .grid-container .grid-item.item2 {
-    margin-top: 0 !important;
-    height: 22rem !important;
-  }
-}
-
-#clone .contents .grid-container{
-  grid-template-columns:minmax(0,800px) !important;
-  grid-template-areas:'item1' !important;
-  justify-content:center !important;
-}
-
-#clone .contents .grid-container .grid-item.item1{
-  grid-area:item1 !important;
 }
