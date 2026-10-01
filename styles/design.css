@@ -1331,3 +1331,143 @@ body #cursor.active{
 #graphic .old-inoy-detail-modal .water-case figure{
   overscroll-behavior:auto !important;
 }
+
+
+/* ===== DETAIL VIEWER TOP BAR — sticky / always visible ===== */
+
+/* Put a real toolbar INSIDE the white project panel */
+#graphic .old-inoy-detail-modal .title_btn_container{
+  position:absolute !important;
+  top:18px !important;
+  left:50% !important;
+  transform:translateX(-50%) !important;
+  width:calc(100% - clamp(36px,6.4vw,112px)) !important;
+  max-width:1440px !important;
+  height:66px !important;
+  min-height:66px !important;
+  padding:0 30px !important;
+  box-sizing:border-box !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  background:rgba(255,255,255,.96) !important;
+  border-radius:14px 14px 0 0 !important;
+  border-bottom:1px solid rgba(0,0,0,.07) !important;
+  box-shadow:none !important;
+  backdrop-filter:blur(14px) !important;
+  -webkit-backdrop-filter:blur(14px) !important;
+  z-index:10030 !important;
+  pointer-events:auto !important;
+}
+
+/* Show the existing project/category title on the right */
+#graphic .old-inoy-detail-modal .title_btn_container .title{
+  display:flex !important;
+  order:2 !important;
+  margin-left:auto !important;
+  margin-right:62px !important;
+  color:#444 !important;
+  align-items:center !important;
+  gap:7px !important;
+  font-family:'Montserrat',Arial,sans-serif !important;
+  font-size:11px !important;
+  font-weight:700 !important;
+  letter-spacing:.11em !important;
+  text-transform:uppercase !important;
+}
+
+/* Existing X stays at far right */
+#graphic .old-inoy-detail-modal .title_btn_container .close_btn{
+  order:3 !important;
+  position:absolute !important;
+  right:18px !important;
+  top:50% !important;
+  transform:translateY(-50%) !important;
+  width:44px !important;
+  height:44px !important;
+  min-width:44px !important;
+  padding:0 !important;
+  border-radius:50% !important;
+  background:#4a4a4a !important;
+  border:0 !important;
+  box-shadow:none !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+}
+
+/* Restore X icon and remove the previous BACK pill */
+#graphic .old-inoy-detail-modal .title_btn_container .close_btn::before{
+  content:none !important;
+}
+#graphic .old-inoy-detail-modal .title_btn_container .close_btn img{
+  display:block !important;
+  width:18px !important;
+  height:18px !important;
+  filter:invert(1) !important;
+}
+#graphic .old-inoy-detail-modal .title_btn_container .close_btn:hover{
+  transform:translateY(-50%) scale(1.06) !important;
+  background:#222 !important;
+}
+
+/* Add the requested left-side back label without changing HTML */
+#graphic .old-inoy-detail-modal .title_btn_container::before{
+  content:"←  작품 미리보기" !important;
+  order:1 !important;
+  color:#222 !important;
+  font-family:'Noto Sans KR',Arial,sans-serif !important;
+  font-size:15px !important;
+  font-weight:600 !important;
+  letter-spacing:-.02em !important;
+  white-space:nowrap !important;
+}
+
+/* Reserve toolbar height so artwork never hides underneath it */
+#graphic .old-inoy-detail-modal .old-inoy-detail-scroll{
+  margin-top:66px !important;
+  height:calc(100% - 66px) !important;
+  border-radius:0 0 14px 14px !important;
+}
+
+/* Make dark gutters clearly clickable; content remains above them */
+#graphic .old-inoy-detail-modal{
+  cursor:pointer;
+}
+#graphic .old-inoy-detail-modal .container,
+#graphic .old-inoy-detail-modal .old-inoy-detail-scroll,
+#graphic .old-inoy-detail-modal .title_btn_container{
+  cursor:none;
+}
+
+@media(min-width:1500px){
+  #graphic .old-inoy-detail-modal .title_btn_container{
+    max-width:1380px !important;
+  }
+}
+
+@media(max-width:850px){
+  #graphic .old-inoy-detail-modal .title_btn_container{
+    top:10px !important;
+    width:calc(100% - 20px) !important;
+    height:58px !important;
+    min-height:58px !important;
+    padding:0 16px !important;
+  }
+  #graphic .old-inoy-detail-modal .title_btn_container::before{
+    font-size:13px !important;
+  }
+  #graphic .old-inoy-detail-modal .title_btn_container .title{
+    display:none !important;
+  }
+  #graphic .old-inoy-detail-modal .title_btn_container .close_btn{
+    right:10px !important;
+    width:38px !important;
+    height:38px !important;
+    min-width:38px !important;
+  }
+  #graphic .old-inoy-detail-modal .old-inoy-detail-scroll{
+    margin-top:58px !important;
+    height:calc(100% - 58px) !important;
+  }
+}
