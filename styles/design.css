@@ -911,3 +911,120 @@ modal popup 개별
 #graphic .old-inoy-detail-modal .old-inoy-detail-scroll{flex:1 1 0!important;min-height:0!important;height:0!important;overflow-y:auto!important;overflow-x:hidden!important;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
 #graphic .old-inoy-detail-modal .old-project-detail{width:100%!important;max-width:none!important;margin:0!important;transform:none!important}
 #graphic .old-inoy-detail-modal .water-case,#graphic .old-inoy-detail-modal .luna-editorial{height:auto!important;max-height:none!important;overflow:visible!important}
+
+
+/* =========================
+   TEAM PROJECT
+========================= */
+
+#team-project .grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  width: 800px;
+  max-width: 65vw;
+}
+
+#team-project .grid-item {
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 4px;
+}
+
+#team-project .team-project-card {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+#team-project .team-project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 아래쪽 프로젝트 정보 */
+#team-project .team-project-card .info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 18px 20px;
+
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+}
+
+#team-project .team-project-card .info h2 {
+  margin: 0 0 5px;
+  font-size: 20px;
+}
+
+#team-project .team-project-card .info p {
+  margin: 0;
+  font-size: 13px;
+}
+
+#team-project .team-project-card .link {
+  margin-top: 10px;
+}
+
+#team-project .team-project-card .link span {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* =========================
+   ADEN CHARACTER DETAIL
+========================= */
+
+.team-detail {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: #000;
+    display: none;
+}
+
+.team-detail.active {
+    display: block;
+}
+
+.team-detail-scroll {
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.team-detail-scroll img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+.team-detail-close {
+    position: fixed;
+    top: 25px;
+    right: 35px;
+    z-index: 100000;
+
+    width: 48px;
+    height: 48px;
+
+    border: 0;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .65);
+    color: #fff;
+
+    font-size: 32px;
+    line-height: 48px;
+    cursor: pointer;
+}

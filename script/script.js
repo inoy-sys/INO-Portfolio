@@ -7,7 +7,7 @@ window.onload = function(){
 };
 
 $('#fullpage').fullpage({
-  anchors: ['firstPage','secondPage','thirdPage','fourthPage','fifthPage','sixthPage','seventhPage','eighthPage'],
+  anchors: ['firstPage','secondPage','thirdPage','fourthPage','fifthPage','sixthPage','seventhPage','eighthPage','ninthPage'],
   menu: '#myMenu',
   autoScrolling: true,
   scrollBar: true,
@@ -95,3 +95,32 @@ modal_popup_bg.forEach(target=>target.addEventListener('click',function(e){if(th
     e.stopPropagation();
   }, { passive:true });
 })();
+
+
+// ADEN CHARACTER DETAIL
+const adenDetailBtn = document.querySelector('.aden-detail-btn');
+const adenDetail = document.querySelector('#aden-character-detail');
+const adenDetailClose = document.querySelector('.team-detail-close');
+
+if (adenDetailBtn && adenDetail && adenDetailClose) {
+
+    adenDetailBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        adenDetail.classList.add('active');
+        document.body.style.overflow = 'hidden';
+
+        if ($.fn.fullpage) {
+            $.fn.fullpage.setAllowScrolling(false);
+        }
+    });
+
+    adenDetailClose.addEventListener('click', function() {
+        adenDetail.classList.remove('active');
+        document.body.style.overflow = '';
+
+        if ($.fn.fullpage) {
+            $.fn.fullpage.setAllowScrolling(true);
+        }
+    });
+}
