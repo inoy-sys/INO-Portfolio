@@ -1028,3 +1028,155 @@ modal popup 개별
     line-height: 48px;
     cursor: pointer;
 }
+
+
+/* INOY mobile refinement — desktop styles remain unchanged */
+@media screen and (max-width: 767px) {
+  html, body { min-width: 0 !important; max-width: 100%; }
+  body { overflow-x: clip; cursor: auto; }
+  #cursor { display: none !important; }
+  .section_bg, .layer_btm_gradient {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    left: 0 !important;
+    right: 0 !important;
+    box-sizing: border-box;
+  }
+  .section_bg { background-size: cover; background-repeat: no-repeat; }
+  #intro, #about { width: 100% !important; max-width: 100vw; }
+  #intro .layer { width: 100% !important; max-width: 100%; }
+  #intro .title .title_container {
+    width: calc(100% - 32px) !important;
+    max-width: 100%;
+    left: 50% !important;
+  }
+  #intro .title .title_container h1:nth-child(2) {
+    font-size: clamp(3.1rem, 12vw, 5.5rem) !important;
+    white-space: normal !important;
+    line-height: 1.02;
+  }
+  #intro .title .title_container h1:nth-child(1) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #intro .title .title_container h1 span { white-space: normal; }
+  #about .contents_wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 110px 22px 45px !important;
+    gap: 28px !important;
+    box-sizing: border-box;
+  }
+
+  /* WEB: replace cropped desktop split with two readable stacked cards */
+  #clone .contents {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 100px 20px 48px !important;
+    box-sizing: border-box;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 22px !important;
+    align-items: stretch !important;
+  }
+  #clone .contents > h1 {
+    width: 100% !important;
+    text-align: center;
+    font-size: clamp(1.7rem, 7vw, 2.3rem) !important;
+  }
+  #clone .contents .grid-container {
+    display: grid !important;
+    width: 100% !important;
+    max-width: 480px !important;
+    margin: 0 auto !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-rows: none !important;
+    grid-template-areas: "item1" "item2" !important;
+    gap: 20px !important;
+  }
+  #clone .contents .grid-container .grid-item.item1,
+  #clone .contents .grid-container .grid-item.item2 {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 10;
+    margin: 0 !important;
+    background-position: center center !important;
+    background-size: contain !important;
+    background-color: rgba(255,255,255,.55);
+    border-radius: 12px;
+    box-shadow: 0 12px 28px rgba(32,65,89,.13);
+  }
+  #clone .contents .grid-container .grid-item .info {
+    transform: none !important;
+    background: linear-gradient(transparent, rgba(14,31,46,.86)) !important;
+    padding: 32px 14px 13px !important;
+    align-items: flex-end;
+    gap: 8px;
+  }
+  #clone .contents .grid-container .grid-item .info .txt { min-width: 0; }
+  #clone .contents .grid-container .grid-item .info .txt h2 {
+    font-size: 14px !important;
+    font-weight: 700;
+  }
+  #clone .contents .grid-container .grid-item .info .txt p {
+    font-size: 10px !important;
+    line-height: 1.4;
+  }
+  #clone .contents .grid-container .grid-item .info .link a {
+    padding: 9px 10px !important;
+    font-size: 11px !important;
+    display: inline-block;
+  }
+
+  /* GRAPHIC: compact two-column mobile gallery */
+  #graphic .contents {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 100px 16px 48px !important;
+    box-sizing: border-box;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 22px !important;
+    align-items: stretch !important;
+  }
+  #graphic .contents > h1 {
+    width: 100% !important;
+    text-align: center;
+    font-size: clamp(1.65rem, 7vw, 2.3rem) !important;
+  }
+  #graphic .contents .grid-container {
+    display: grid !important;
+    width: 100% !important;
+    max-width: 540px !important;
+    margin: 0 auto !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-rows: none !important;
+    grid-template-areas: "item1 item2" "item3 item4" "item5 item6" !important;
+    gap: 12px !important;
+  }
+  #graphic .contents .grid-container .grid-item {
+    width: 100% !important;
+    height: auto !important;
+    min-width: 0;
+    aspect-ratio: 4 / 3;
+    border-radius: 9px;
+    overflow: hidden;
+    background-position: center !important;
+    background-size: cover !important;
+    filter: none !important;
+    box-shadow: 0 5px 16px rgba(32,65,89,.12);
+  }
+  #graphic .contents .grid-container .grid-item:hover { transform: none !important; }
+  #graphic .contents .grid-container .grid-item::after {
+    font-size: 11px !important;
+    line-height: 1.2;
+  }
+  #graphic .contents .grid-container .grid-item::before {
+    font-size: 9px !important;
+  }
+  #graphic .old-inoy-detail-modal .container {
+    width: 96vw !important;
+    top: 12px !important;
+    height: calc(100dvh - 24px) !important;
+  }
+}
